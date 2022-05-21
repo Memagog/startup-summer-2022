@@ -7,7 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+// (ss) start-up summer colors
+:root {
+  --ss-white-color: #FFFFFF;
+  --ss-bg-color: #E5E5E5;
+  --ss-blue-color: #0064EB;
 }
