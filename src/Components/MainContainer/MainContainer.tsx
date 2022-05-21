@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import Profile from "../Profile";
+import Repositories from "../Repositories";
+import './style.scss';
 
-type Props = {}
+interface IMainContainerProps {
+  user: any;
+};
 
-const MainContainer = (props: Props) => {
+const MainContainer = ({ user }: IMainContainerProps) => {
   return (
-    <div>MainContainer</div>
-  )
-}
+    <div className="container">
+      <Profile user={user}/>
+      <Repositories />
+    </div>
+  );
+};
 
 export default MainContainer;

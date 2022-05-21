@@ -1,0 +1,56 @@
+.profile {
+  width: 292px;
+  height: 430px;
+  margin: 40px 85px 0px 56px;
+}
+
+.profile-image {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+  margin-top: 29px;
+  margin-bottom: 12px;
+}
+
+.profile-login {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--ss-blue-color);
+  margin: 12px 0 25px 0;
+}
+
+.follow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  line-height: 28px;
+  justify-content: space-between;
+}
+
+.followers,.following {
+  display: flex;
+  flex-direction: row;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.followers_text {
+  margin-left: 8px;
+}
+
+.following_text {
+  margin-left: 8px;
+}

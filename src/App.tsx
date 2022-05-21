@@ -47,7 +47,7 @@ const App = (): ReactElement => {
         setState={setState}
         state={state}
       />
-      <MainContainer />
+      {response ? <MainContainer user={response}/> : <div>Test</div>}
     </div>
   );
 };
