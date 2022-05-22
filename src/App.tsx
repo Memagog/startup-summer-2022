@@ -39,7 +39,7 @@ const App = (): ReactElement => {
   };
 
   return (
-    <div>
+    <div className="main">
       <SearchBar
         handleSubmit={handleSubmit}
         onSearch={onSearch}

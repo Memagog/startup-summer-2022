@@ -41,7 +41,7 @@ const Repositories = ({ user }: IRepositoriesProps) => {
   return (
     <div className="repos">
       {user.public_repos > 0 ? (
-        <div>
+        <div className="repos_container">
           <div>
             <h1 className="repos_counter_title">
               {" "}
