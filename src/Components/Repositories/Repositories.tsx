@@ -77,7 +77,8 @@ const Repositories = ({ user }: IRepositoriesProps) => {
         </div>
       ) : (
         <div className="empty">
-          <Message icon={<Empty />} message="Repository list is empty" />
+          <Empty />
+          <p>Repository list is empty</p>
         </div>
       )}
     </div>
