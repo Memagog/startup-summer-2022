@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import { Empty } from "../../resources/icons";
 import { IRepo, IUser } from "../../types";
+import Message from "../Message";
 import Repository from "./Repository";
 import "./style.scss";
 interface IRepositoriesProps {
@@ -52,29 +54,30 @@ const Repositories = ({ user }: IRepositoriesProps) => {
             </ul>
           </div>
 
-          <div className="paginationBttns">
-            <p className="paginationRow">
-              {pageVisited + 1 + " - "}
-              {pageVisited + perPage - 1}
-              {" of " + user.public_repos}
-            </p>
-            <ReactPaginate
-              previousLabel={""}
-              nextLabel={""}
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={"paginationBttns"}
-              previousLinkClassName={"previousBttn"}
-              nextLinkClassName={"nextBttn"}
-              disabledClassName={"paginationDisabled"}
-              activeClassName={"paginationActive"}
-            />
-          </div>
+          {user.public_repos > perPage ? (
+            <div className="paginationBttns">
+              <p className="paginationRow">
+                {pageVisited + 1 + " - "}
+                {pageVisited + perPage - 1}
+                {" of " + user.public_repos}
+              </p>
+              <ReactPaginate
+                previousLabel={""}
+                nextLabel={""}
+                pageCount={pageCount}
+                onPageChange={changePage}
+                containerClassName={"paginationBttns"}
+                previousLinkClassName={"previousBttn"}
+                nextLinkClassName={"nextBttn"}
+                disabledClassName={"paginationDisabled"}
+                activeClassName={"paginationActive"}
+              />
+            </div>
+          ) : undefined}
         </div>
       ) : (
-        <div>
-          {/* <img src={rep} alt="repos" /> */}
-          <p>Repository list is empty</p>
+        <div className="empty">
+          <Message icon={<Empty />} message="Repository list is empty" />
         </div>
       )}
     </div>

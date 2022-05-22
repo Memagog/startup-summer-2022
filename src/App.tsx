@@ -1,42 +1,39 @@
 import React, { ReactElement, useState } from "react";
-import { MainContainer, SearchBar } from "./Components";
+import { Loader, MainContainer, Message, SearchBar } from "./Components";
 import "./App.scss";
-export interface IState {
-  loaded: boolean;
-  timer: boolean;
-  username: string;
-}
+import { NotFoundIcon, SearchIcon } from "./resources/icons";
+import { IUser } from "./types";
 
 const App = (): ReactElement => {
-  const [response, setResponse] = useState();
-  const [state, setState] = useState<IState>({
-    username: "",
-    timer: false,
-    loaded: true,
-  });
+  const [response, setResponse] = useState<IUser | undefined>();
+  const [search, setSearch] = useState<string>("");
+  const [loaded, setLoaded] = useState<boolean>(true);
+  const [first, setFirst] = useState<boolean>(true);
+  const onSearch = (search: string) => setSearch(search);
 
   const handleSubmit = (e: any) => {
-    setState({ ...state, timer: true });
+    setFirst(false);
+    setLoaded(false);
     e.preventDefault();
     const fetchData = async () => {
       try {
         const result = await (
-          await fetch(`https://api.github.com/users/${state.username}`)
+          await fetch(`https://api.github.com/users/${search}`)
         ).json();
         if (result.message === "Not Found") {
-          setState({ ...state, loaded: false });
+          setResponse(undefined);
+          setLoaded(true);
         } else {
           setResponse(result);
-          setState({ ...state, loaded: true });
         }
       } catch (error) {
-        setState({ ...state, loaded: false });
+        setLoaded(false);
         console.log(error);
       }
     };
     const timer = setTimeout(() => {
       fetchData();
-      setState({ ...state, timer: true });
+      setLoaded(true);
     }, 2000);
     return () => clearTimeout(timer);
   };
@@ -45,10 +42,27 @@ const App = (): ReactElement => {
     <div>
       <SearchBar
         handleSubmit={handleSubmit}
-        setState={setState}
-        state={state}
+        onSearch={onSearch}
+        search={search}
       />
-      {response ? <MainContainer user={response} /> : <div>Test</div>}
+      {response ? (
+        loaded ? (
+          <MainContainer user={response} />
+        ) : (
+          <Loader />
+        )
+      ) : loaded ? (
+        first ? (
+          <Message
+            icon={<SearchIcon width={64} height={64} />}
+            message={`Start with searching a GitHub user`}
+          />
+        ) : (
+          <Message icon={<NotFoundIcon />} message={`User not found`} />
+        )
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

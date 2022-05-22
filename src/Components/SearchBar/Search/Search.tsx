@@ -3,7 +3,7 @@ import { SearchIcon } from "../../../resources/icons";
 import { ISearchProps } from "../SearchBar";
 import "./style.scss";
 
-const Search = ({ handleSubmit, state, setState }: ISearchProps) => {
+const Search = ({ handleSubmit, onSearch, search}: ISearchProps) => {
   return (
     <div className="search-wrapper">
       <div className="search-icon">
@@ -14,8 +14,8 @@ const Search = ({ handleSubmit, state, setState }: ISearchProps) => {
           className="search-input"
           type="text"
           placeholder="Enter Github username"
-          value={state.username}
-          onChange={(e) => setState({ ...state, username: e.target.value })}
+          value={search}
+          onChange={(e) => onSearch(e.target.value)}
         />
       </form>
     </div>
