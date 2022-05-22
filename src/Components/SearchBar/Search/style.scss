@@ -8,9 +8,10 @@
   border-radius: 6px;
 }
 .search-icon {
-  margin: 9px 11px 9px 19px;
+  margin: 9px 11px 6px 19px;
 }
 .search-input {
+  min-width: 100px;
   font-family: "Inter";
   font-style: 400;
   font-weight: normal;
@@ -28,7 +29,9 @@
   border: none;
   outline: none;
 }
-
+input:focus::placeholder {
+  color: transparent;
+}
 @media only screen and (max-width: 700px) {
   .search-wrapper {
     display: flex;

@@ -22,7 +22,11 @@ const Repositories = ({ user }: IRepositoriesProps) => {
         await fetch(
           `https://api.github.com/users/${
             user.login
-          }/repos?per_page=${perPage}&page=${currentPage + 1}`
+          }/repos?per_page=${perPage}&page=${currentPage + 1}`, {
+            headers: {
+              'User-Agent': 'request'
+            }
+          }
         )
       ).json();
       setRepos(result);

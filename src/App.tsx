@@ -18,7 +18,11 @@ const App = (): ReactElement => {
     const fetchData = async () => {
       try {
         const result = await (
-          await fetch(`https://api.github.com/users/${search}`)
+          await fetch(`https://api.github.com/users/${search}`, {
+            headers: {
+              "User-Agent": "request",
+            },
+          })
         ).json();
         if (result.message === "Not Found") {
           setResponse(undefined);
