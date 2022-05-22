@@ -1,23 +1,11 @@
 import React from "react";
-import FollowersIcon from "../../icons/FollowersIcon";
-import FollowingIcon from "../../icons/FollowingIcon";
+import FollowersIcon from "../../resources/icons/FollowersIcon";
+import FollowingIcon from "../../resources/icons/FollowingIcon";
+import { IUser } from "../../types";
 import "./style.scss";
 
 interface IProfileProps {
-  user: {
-    avatar_url: string;
-    followers: number;
-    following: number;
-    id: number;
-    name: string;
-    login: string;
-    public_gists: number;
-    public_repos: number;
-    repos_url: string;
-    starred_url: string;
-    subscriptions_url: string;
-    url: string;
-  };
+  user: IUser;
 }
 
 const Profile = ({ user }: IProfileProps) => {
@@ -25,11 +13,11 @@ const Profile = ({ user }: IProfileProps) => {
     <div className="profile">
       <img src={user?.avatar_url} alt="" className="profile-image" />
       <h2 className="profile-name">{user.name}</h2>
-      <p className="profile-login">{user.login}</p>
+      <p  className="profile-login"><a target='_blank' href={user.html_url}  className="profile-login">{user.login}</a></p>
       <div className="follow">
         <div className="followers">
           <FollowersIcon />
-          <span className="followers_text">{user.followers} followers</span>
+          <span className="followers_text">{`${user.followers>1000? Math.ceil(user.followers/1000) + "K": user.followers} followers`}</span>
         </div>
         <div className="following">
           <FollowingIcon />

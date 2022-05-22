@@ -2,10 +2,11 @@ import React, { ReactElement, useState } from "react";
 import { MainContainer, SearchBar } from "./Components";
 import "./App.scss";
 export interface IState {
-  username: string;
-  timer: boolean;
   loaded: boolean;
+  timer: boolean;
+  username: string;
 }
+
 const App = (): ReactElement => {
   const [response, setResponse] = useState();
   const [state, setState] = useState<IState>({
@@ -47,7 +48,7 @@ const App = (): ReactElement => {
         setState={setState}
         state={state}
       />
-      {response ? <MainContainer user={response}/> : <div>Test</div>}
+      {response ? <MainContainer user={response} /> : <div>Test</div>}
     </div>
   );
 };

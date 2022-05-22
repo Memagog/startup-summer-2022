@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchIcon } from "../../../icons";
+import { SearchIcon } from "../../../resources/icons";
 import { ISearchProps } from "../SearchBar";
 import "./style.scss";
 

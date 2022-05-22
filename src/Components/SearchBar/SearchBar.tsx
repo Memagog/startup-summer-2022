@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { IState } from "../../App";
-import { GitLogo } from "../../icons";
+import { GitLogo } from "../../resources/icons";
 import Search from "./Search";
 import "./style.scss";
 

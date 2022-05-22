@@ -1,0 +1,83 @@
+.repos {
+  margin: 0 56px 0 85px;
+}
+.repos_counter_title {
+  margin: 28px 0 29px 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.repos_list {
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+
+.paginationBttns {
+  width: 200;
+  height: 25px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 28px;
+}
+
+.paginationBttns a {
+  padding: 2px 6px;
+  margin: 8px;
+  border-radius: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--ss-blue-color);
+  cursor: pointer;
+}
+
+.previousBttn {
+  background: url("../../resources/images/prev.png") no-repeat;
+  background-size: 7.4px;
+  height: 12px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.nextBttn {
+  background: url("../../resources/images/next.png") no-repeat;
+  background-size: 7.4px;
+  height: 12px;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.paginationBttns li {
+  &:not(:first-child):not(:last-child) {
+    a:hover {
+      color: var(--ss-blue-white);;
+      background-color: var(--ss-blue-color);
+    }
+  }
+}
+
+.paginationActive a {
+  color: var(--ss-blue-white);;
+  background-color: var(--ss-blue-color);
+}
+
+.paginationRow {
+  // width: 111px;
+  height: 28px;
+  margin: 16;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: var(--ss-grey-color);
+}
