@@ -1,0 +1,56 @@
+.repos_list_item {
+  background-color: var(--ss-white-color);
+  width: 877px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.repos_list_item_link {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: var(--ss-blue-color);
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  text-decoration: none;
+  margin: 24px 32px 16px 32px;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repos_list_item_description {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin: 0 32px;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 1300px) {
+  .repos_list_item {
+    width: 100%;
+  }
+}
+@media (min-width: 500px) and (max-width: 1000px) {
+  .repos_list_item {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 500px) { 
+  .repos_list_item {
+    width: 300px
+  }
+}

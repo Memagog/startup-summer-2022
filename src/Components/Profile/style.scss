@@ -1,0 +1,125 @@
+.profile {
+  width: 292px;
+  height: 430px;
+  margin: 40px 0px 0px 56px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.profile-image {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+  margin-top: 29px;
+  margin-bottom: 12px;
+}
+
+.profile-login {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--ss-blue-color);
+  margin: 12px 0 25px 0;
+}
+
+.follow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  line-height: 28px;
+  justify-content: space-between;
+}
+
+.followers,.following {
+  display: flex;
+  flex-direction: row;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.followers_text {
+  margin-left: 8px;
+}
+
+.following_text {
+  margin-left: 8px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .profile {
+    width: 400px;
+    height: 430px;
+    margin: 40px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  .follow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    line-height: 28px;
+    justify-content: center;
+  }
+  .followers_text {
+    margin-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .profile {
+    width: 100%;
+    height: 230px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  .follow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    line-height: 28px;
+    justify-content: center;
+  }
+  .followers_text {
+    margin-right: 10px;
+  }
+  .followers,.following {
+    display: flex;
+    flex-direction: row;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .followers_text {
+    max-height: 40%;
+    text-overflow: ellipsis;
+  } 
+}
