@@ -11,6 +11,8 @@ interface IRepositoriesProps {
 const Repositories = ({ user }: IRepositoriesProps) => {
   const [repos, setRepos] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [perPage, setPerPage] = useState(4);
   const pageVisited = currentPage * perPage;
 
@@ -30,6 +32,7 @@ const Repositories = ({ user }: IRepositoriesProps) => {
     if (user.public_repos > 0) {
       getRepositories();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, perPage, currentPage]);
 
   const pageCount = Math.ceil(user.public_repos / perPage);
