@@ -2,14 +2,14 @@ import React from "react";
 
 interface IFollowingIconProps {
   color?: string;
-  width?: string | number;
   height?: string | number;
+  width?: string | number;
 }
 
 const FollowingIcon = ({
   color = "#808080",
-  width = 25,
   height = 25,
+  width = 25,
 }: IFollowingIconProps) => {
   return (
     <svg

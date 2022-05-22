@@ -2,14 +2,14 @@ import React from "react";
 
 interface IFollowersIconProps {
   color?: string;
-  width?: string | number;
   height?: string | number;
+  width?: string | number;
 }
 
 const FollowersIcon = ({
   color = "#808080",
-  width = 25,
   height = 25,
+  width = 25, 
 }: IFollowersIconProps) => {
   return (
     <svg

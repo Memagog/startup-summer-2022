@@ -2,14 +2,15 @@ import React from "react";
 
 interface IGitLogoProps {
   color?: string;
-  width?: string | number;
   height?: string | number;
+  width?: string | number;
+  
 }
 
 const GitLogo = ({
   color = "white",
-  width = 41,
   height = 40,
+  width = 41,
 }: IGitLogoProps) => {
   return (
     <svg

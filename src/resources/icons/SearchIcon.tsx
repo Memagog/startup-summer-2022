@@ -2,14 +2,14 @@ import React from "react";
 
 interface ISearchIconProps {
   color?: string;
-  width?: string | number;
   height?: string | number;
+  width?: string | number;
 }
 
 const SearchIcon = ({
   color = "#808080",
-  width = 14,
   height = 14,
+  width = 14,
 }: ISearchIconProps) => {
   return (
     <svg

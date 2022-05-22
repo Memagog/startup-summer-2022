@@ -2,14 +2,14 @@ import React from "react";
 
 interface IEmptyProps {
   color?: string;
-  width?: string | number;
   height?: string | number;
+  width?: string | number;
 }
 
 const Empty = ({
   color = "#808080",
-  width = 110,
   height = 110,
+  width = 110,
 }: IEmptyProps) => {
   return (
     <svg

@@ -2,14 +2,14 @@ import React from "react";
 
 interface INotFoundIconProps {
   color?: string;
-  width?: string | number;
   height?: string | number;
+  width?: string | number;
 }
 
 const NotFoundIcon = ({
   color = "#808080",
-  width = 65,
   height = 75,
+  width = 65,
 }: INotFoundIconProps) => {
   return (
     <svg

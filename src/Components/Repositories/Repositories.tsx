@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Empty } from "../../resources/icons";
 import { IRepo, IUser } from "../../types";
-import Message from "../Message";
 import Repository from "./Repository";
 import "./style.scss";
 interface IRepositoriesProps {
